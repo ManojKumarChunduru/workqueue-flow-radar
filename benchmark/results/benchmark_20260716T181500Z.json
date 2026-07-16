@@ -1,0 +1,83 @@
+{
+  "run_at": "2026-07-16T17:59:44.109677+00:00",
+  "machine": {
+    "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "duckdb": "1.5.4",
+    "pandas": "3.0.2",
+    "cpu_count": 1,
+    "ram_gb": 3.9
+  },
+  "note": "Throughput is events/second over the analyze step (load + six SQL models + result extraction). Simulation excluded: production events arrive from the EHR's WQ history.",
+  "steps": [
+    {
+      "n_claims": 20000,
+      "n_events": 87185,
+      "timings_seconds": {
+        "simulate": 1.741,
+        "analyze": 0.562,
+        "packet": 0.082,
+        "score": 0.004
+      },
+      "analyze_events_per_second": 155002,
+      "detection": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "victims_planted": 54,
+        "victims_detected": 54,
+        "true_positives": 54,
+        "pairs_planted": 3,
+        "pairs_fired": 2,
+        "pairs_attributed": 2,
+        "pairs_dormant": 1,
+        "pair_attribution_rate": 1.0
+      }
+    },
+    {
+      "n_claims": 100000,
+      "n_events": 435972,
+      "timings_seconds": {
+        "simulate": 11.267,
+        "analyze": 4.043,
+        "packet": 0.261,
+        "score": 0.004
+      },
+      "analyze_events_per_second": 107842,
+      "detection": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "victims_planted": 347,
+        "victims_detected": 347,
+        "true_positives": 347,
+        "pairs_planted": 3,
+        "pairs_fired": 2,
+        "pairs_attributed": 2,
+        "pairs_dormant": 1,
+        "pair_attribution_rate": 1.0
+      }
+    },
+    {
+      "n_claims": 250000,
+      "n_events": 1088185,
+      "timings_seconds": {
+        "simulate": 24.742,
+        "analyze": 6.892,
+        "packet": 0.184,
+        "score": 0.005
+      },
+      "analyze_events_per_second": 157881,
+      "detection": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "victims_planted": 840,
+        "victims_detected": 840,
+        "true_positives": 840,
+        "pairs_planted": 3,
+        "pairs_fired": 2,
+        "pairs_attributed": 2,
+        "pairs_dormant": 1,
+        "pair_attribution_rate": 1.0
+      }
+    }
+  ]
+}
