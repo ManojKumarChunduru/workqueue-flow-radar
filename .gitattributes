@@ -1,0 +1,4 @@
+# GitHub Linguist classifies SQL as a data type and hides it from the
+# language bar by default. The journey reconstruction and cycle
+# detection SQL is the core logic of this repo, so make it count.
+*.sql linguist-detectable=true linguist-language=SQL
